@@ -4,6 +4,9 @@
     --secondary-font : 'Montserrat', sans-serif;
     font-size: 16px;
 }
+body{
+  overflow-x: hidden;
+}
 
 h1{
     font-size: 2.5rem;
@@ -50,16 +53,16 @@ header{
 }
 
 .nav{
-    z-index: 10;
+    z-index: 100;
     position: absolute;
     width: 100%;
     bottom: 0;
     height: 70px;
     background-color: rgb(20, 20, 20);
-    display: none;
     margin: auto 0;
     align-items: center;
-    padding: 0 100px;
+    display: flex; 
+    padding: 0 50px;
     justify-content: space-between;
 }
 
@@ -78,7 +81,6 @@ header{
 h1.brand{
     font-family: var(--secondary-font);
     text-transform: uppercase;
-    /* font-size: 18px; */
     margin-left: 12px;
     color: #fff;
     letter-spacing: .2rem;
@@ -191,6 +193,7 @@ i {
   width: 5px;
   border-radius: 2.5px;
   background-color: white;
+  animation: scrollDownAnimation 4s ease-out infinite; 
 }
 
 /*About Section Banner*/
@@ -473,7 +476,7 @@ img {
 
 .center-banner{
     position: absolute;
-    width: 90%;
+    width: 100%;
     text-align: center;
     top: 50%;
     left: 50%;
@@ -826,12 +829,36 @@ img {
     :root{
        font-size: 14px;
     }
+
+    .nav{
+      display: block;
+    }
+
+    .nav-btn{
+      display: block;
+      position: absolute;
+      top: 60px;
+      right: 60px;
+    }
+}
+
+.feedback.banner{
+  padding: 0;
 }
 
 @media screen and (max-width: 768px){
     :root{
        font-size: 12px;
     }
+
+    .nav{
+      display: none;
+    }
+
+        .feedback.banner h1{
+          font-size: 1.8rem;
+          margin: 0 auto;
+        }
 
     .block{
         display: flex;
@@ -868,9 +895,20 @@ img {
       /*----------------------------------------------------- Our Menu */
   .menu-links {
     text-align: center;
-    width: 80vw;
+    width: 100%;
+    margin: 1rem auto;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    display: block;
+  }
+  .menu-link{
+    margin: .5rem 0;
+  }
+  .menu-links li {
+    padding: 0;
+    margin: 0;
+    text-align: center;
   }
   #our-menu {
     padding: 40px 0;
@@ -885,7 +923,7 @@ img {
 .menu-item{
     text-align: center;
     padding: 10px;
-    width: 450px;
+    width: 100%;
     margin: 0 auto;
 }
 .grid-section{
@@ -989,4 +1027,34 @@ img {
     padding: 10px;
     width: 100%;
   }
+
+  footer{
+    min-height: 50vh;
+  }
+
+  footer .logo-l{
+    margin-bottom:3rem;
+  }
+
+  footer .row-1{
+    display: block;
+  }
+
+  footer .row-1 h2{
+    margin: 1.5rem 0;
+  }
+
+  footer .row-2{
+    width: 100%;
+    justify-content: space-around;
+  }
+}
+
+@keyframes scrollDownAnimation{
+  0%{opacity: 1}
+  40%{top:45px}
+  50%{opacity: 1}
+  60%{opacity: 0}
+  100%{opacity: 0;}
+
 }
